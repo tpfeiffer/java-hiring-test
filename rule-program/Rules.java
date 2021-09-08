@@ -1,6 +1,6 @@
 public class Rules {
 
-    public Change computeChange() {
+    public static Change computeChange() {
         return new Change();
     }
 

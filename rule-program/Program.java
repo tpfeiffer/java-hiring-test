@@ -9,4 +9,8 @@ public class Program extends Observable {
         setChanged();
         notifyObservers();
     }
+
+    public void applyChange(Change change) {
+        change.apply(this);
+    }
 }

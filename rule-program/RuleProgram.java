@@ -19,7 +19,7 @@ public class RuleProgram implements Observer {
 
         if (program.equals(o)) {
 
-            Change change = BusinessRules.computeChange();
+            Change change = Rules.computeChange();
 
             // FIXME We are risking an infinite loop here...
             program.applyChange(change);
