@@ -18,12 +18,9 @@ public class RuleProgram implements Observer {
     public void update(Observable o, Object arg) {
 
         if (program.equals(o)) {
-
-            Change change = Rules.computeChange();
-
+            
             // FIXME We are risking an infinite loop here...
-            program.applyChange(change);
-
+            program.mutateWith("a change");
 
         } else if (o instanceof ReferenceData) {
 
@@ -31,9 +28,11 @@ public class RuleProgram implements Observer {
 
             List<DataObject> dataObjects = r.getData();
 
-            for (DataObject dataObject : dataObjects) {
-                // FIXME Nullpointer!!!
-                dataObject.insert();
+            if (dataObjects != null) {
+                for (DataObject dataObject : dataObjects) {
+                    // FIXME Nullpointer!!!
+                    dataObject.insert();
+                }
             }
         }
     }
