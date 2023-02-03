@@ -20,7 +20,7 @@ public class RuleProgram implements Observer {
         if (program.equals(o)) {
             
             // FIXME We are risking an infinite loop here...
-            program.mutateWith("a change");
+            program.setIsTuesday(True);
 
         } else if (o instanceof ReferenceData) {
 
