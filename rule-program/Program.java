@@ -1,16 +1,20 @@
 import java.util.Observable;
-import java.util.Observer;
 
 public class Program extends Observable {
-    private boolean isTuesday = false;
-
-    public void setIsTuesday(boolean isTuesday) {
-        isTuesday = isTuesday;
+    private boolean isValid = false;
+    
+    public void setValid(boolean isValid) {
+        this.isValid = isValid;
+    }
+    
+    public void setIsValid(boolean isValid) {
+        
+        this.isValid = isValid;
         setChanged();
         notifyObservers();
     }
-
-    public void applyChange(Change change) {
-        change.apply(this);
+    
+    public boolean isValid() {
+        return isValid;
     }
 }
